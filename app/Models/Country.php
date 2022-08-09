@@ -15,4 +15,17 @@ class Country extends Model
         public $timetamps=false;
         
     use HasFactory;
+    //relacion de muchos a mmuchos entre paises e idiomas 
+    public function idiomas(){
+        //belongstomany : parametros
+        //1-modelo a relacionar 
+        //2 la tabla pivote
+        //3- fk del modelo actual en el pivote 
+        //4 - fk del modelo a relacionar en el pivote 
+        return $this->belongsToMany(Idioma::class,
+                                    'country_languages',
+                                    'country_id',
+                                    'language_id'
+                                    )->withpivot('official');
+    }
 }
