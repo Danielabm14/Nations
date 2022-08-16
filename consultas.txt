@@ -1,0 +1,8 @@
+ use App\Models\Country
+>>> Country::where('name', 'like', 'C%')->
+... select('Country_code2')->
+... get()
+
+Country::select('national_day','name')->
+... wherebetween('national_day',['1492-10-12','1789-07-14'])->
+... get()

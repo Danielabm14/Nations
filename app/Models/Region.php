@@ -21,7 +21,7 @@ class Region extends Model
         //belongsTo : Parametros
         //1. modelo a relacionar 
         //2. la fk del modelo relacionar del modelo actual 
-        return $this->belongsTo(Continente::class,
+        return $this->belongsTo(Continent::class,
                                     'continent_id');      
     }
     //Relacion entre region 1 - M Paises 
@@ -29,4 +29,5 @@ class Region extends Model
         return $this->hasMany(Country::class,
                                     'region_id');
     }
+
 }
